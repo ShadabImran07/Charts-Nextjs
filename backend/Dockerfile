@@ -6,12 +6,14 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package*.json ./
 
+RUN npm i -g nodemon
+
 
 # Bundle app source
 COPY . .
 
 # Expose the port
-EXPOSE 3000
+EXPOSE 8080
 
 # Start the app with nodemon for live reloading
 CMD ["npm", "run", "start"]
